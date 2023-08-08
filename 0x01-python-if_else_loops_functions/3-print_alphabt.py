@@ -2,4 +2,4 @@
 for i in range(97, 122):
     if chr(i) in "qe":
         continue
-    print("{:c}".format(i), end='')
+    print(f"{i:c}", end='')
