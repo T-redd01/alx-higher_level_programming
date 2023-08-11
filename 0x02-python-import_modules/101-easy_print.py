@@ -1,2 +1,2 @@
 #!/usr/bin/python3
-repr("word")
+exec("import os; os.write(1, b'#pythoniscool\\n')")
