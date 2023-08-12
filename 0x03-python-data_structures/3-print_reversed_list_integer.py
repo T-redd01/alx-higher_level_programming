@@ -5,6 +5,10 @@ def print_reversed_list_integer(my_list=[]):
         Args:
             my_list: list of integers
     """
+    if my_list == []:
+        print()
+        return
+
     x = my_list[:]
     x.reverse()
     for i in x:
