@@ -65,7 +65,7 @@ int is_palindrome(listint_t **head)
 		if (tmp->n != tmp2->n)
 		{
 			free_listint(hold);
-			return 0;
+			return (0);
 		}
 		tmp = tmp->next;
 		tmp2 = tmp2->next;
