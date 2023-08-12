@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 def element_at(my_list, idx):
     """retrieves value of given index in list
-    
+
         Args:
             my_list: list of values
             idx: index of wanted value

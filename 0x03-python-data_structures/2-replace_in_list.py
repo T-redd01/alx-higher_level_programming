@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 def replace_in_list(my_list, idx, element):
     """replace value at given index of list
-    
+
         Args:
             my_list: list to change value
             idx: index of list value to change
