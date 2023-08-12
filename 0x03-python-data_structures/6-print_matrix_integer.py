@@ -9,5 +9,6 @@ def print_matrix_integer(matrix=[[]]):
         for j, v in enumerate(i):
             if j == 0:
                 print("{:d}".format(v), end='')
+                continue
             print(", {:d}".format(v), end='')
         print("")
