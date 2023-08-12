@@ -5,9 +5,10 @@ def print_reversed_list_integer(my_list=[]):
         Args:
             my_list: list of integers
     """
-    x = my_list.copy()
-    x.reverse()
-    for i in x:
+    #x = my_list.copy()
+    #x.reverse()
+    my_list.reverse()
+    for i in my_list:
         print("{:d}".format(i))
 """
 
