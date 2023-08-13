@@ -5,25 +5,9 @@ def print_reversed_list_integer(my_list=[]):
         Args:
             my_list: list of integers
     """
-    #x = my_list.copy()
-    #x.reverse()
+    if type(my_list) != type([]):
+        return
+
     my_list.reverse()
     for i in my_list:
         print("{:d}".format(i))
-"""
-
-my_list = [1,2,3,4,5,6]
-print_reversed_list_integer(my_list)
-print()
-
-my_list = []
-print_reversed_list_integer(my_list)
-print()
-
-my_list = None
-print_reversed_list_integer(my_list)
-print()
-
-my_list = [1, 2, "str", 4, 5]
-print_reversed_list_integer(my_list)
-"""
