@@ -1,76 +1,43 @@
 #include "lists.h"
 
 /**
- * free_listint - frees a listint_t list
- * @head: pointer to list to be freed
- * Return: void
- */
-void free_listint(listint_t *head)
-{
-	listint_t *current;
-
-	while (head != NULL)
-	{
-		current = head;
-		head = head->next;
-		free(current);
-	}
-}
-
-/**
- * copy_in_reverse - copies list but with reversed values
- * @h: list destination
- * Return: begining of new list
- */
-listint_t *copy_in_reverse(listint_t *h)
-{
-	listint_t *new = NULL, *top = NULL;
-
-	while (h)
-	{
-		new = malloc(sizeof(listint_t));
-		if (!new)
-		{
-			if (top)
-				free_listint(top);
-			return (NULL);
-		}
-		new->n = h->n;
-		new->next = top;
-		top = new;
-		h = h->next;
-	}
-	return (top);
-}
-
-/**
- * is_palindrome - tests whether linked list is a palindrome
+ * is_palindrome - checks whether list is a palindrome
  * @head: beginning of list
- * Return: 0 if not palindrome, 1 if is palindrome
+ *
+ * Return: 1 if is a palindrome, 0 if not
  */
 int is_palindrome(listint_t **head)
 {
-	listint_t *tmp = *head, *tmp2, *hold = NULL;
+	listint_t *slow = *head, *fast = *head, *tmp = NULL;
 
 	if (!(*head))
 		return (1);
 
-	hold = copy_in_reverse(*head);
-	if (!hold)
-		return (0);
-
-	tmp2 = hold;
-	while (tmp && tmp2)
+	while (fast && fast->next)
 	{
-		if (tmp->n != tmp2->n)
-		{
-			free_listint(hold);
-			return (0);
-		}
-		tmp = tmp->next;
-		tmp2 = tmp2->next;
+		fast = fast->next->next;
+		slow = slow->next;
 	}
-	free_listint(hold);
+
+	if (fast)
+		slow = slow->next;
+
+	while (slow)
+	{
+		fast = slow->next;
+		slow->next = tmp;
+		tmp = slow;
+		slow = fast;
+	}
+
+	fast = *head;
+	while (tmp)
+	{
+		if (tmp->n != fast->n)
+			return (0);
+		fast = fast->next;
+		tmp = tmp->next;
+	}
 	return (1);
 }
 
