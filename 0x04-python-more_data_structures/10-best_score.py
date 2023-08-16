@@ -5,6 +5,5 @@ def best_score(a_dictionary):
         k = None
         for i, v in a_dictionary.items():
             if v > m:
-                print(v, m, i)
                 m, k = v, i
         return k
