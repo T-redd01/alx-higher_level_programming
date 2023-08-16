@@ -1,10 +1,5 @@
-#include <stdio.h>
 #include <Python.h>
 
-/**
- * print_python_list_info - print info about python list
- * @p: holds info about python objects
- */
 void print_python_list_info(PyObject *p)
 {
 	Py_ssize_t i, size = 0, alloced = 0;
@@ -26,4 +21,3 @@ void print_python_list_info(PyObject *p)
 		printf("Element %zd: %s\n", i, tp);
 	}
 }
-
