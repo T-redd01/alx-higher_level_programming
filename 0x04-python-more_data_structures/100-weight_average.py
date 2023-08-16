@@ -5,9 +5,3 @@ def weight_average(my_list=[]):
     mul_tups = sum((i * j for i, j in my_list))
     add_2_el = sum((j for i, j in my_list))
     return mul_tups / add_2_el
-
-
-my_list = [(1, 2), (2, 1), (3, 10), (4, 2)]
-# = ((1 * 2) + (2 * 1) + (3 * 10) + (4 * 2)) / (2 + 1 + 10 + 2)
-result = weight_average(my_list)
-print("Average: {:0.2f}".format(result))
