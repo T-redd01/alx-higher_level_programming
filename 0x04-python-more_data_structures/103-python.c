@@ -54,7 +54,7 @@ void print_python_list(PyObject *p)
 
 	if (!(PyList_Check(p)))
 		return;
-	
+
 	printf("[*] Python list info\n");
 	pylist = (PyListObject *)p;
 	size = PyList_GET_SIZE(pylist);
