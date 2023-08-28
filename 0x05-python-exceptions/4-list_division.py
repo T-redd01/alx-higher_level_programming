@@ -1,4 +1,4 @@
-#!/usr/bin/pytho3
+#!/usr/bin/python3
 def list_division(my_list_1, my_list_2, list_length):
     if not isinstance(my_list_1, list) or not isinstance(my_list_2, list):
         return []
