@@ -45,10 +45,11 @@ class Node:
 
     @next_node.setter
     def next_node(self, value):
-        if isinstance(value, Node) or value == None:
+        if isinstance(value, Node) or value is None:
             self.__next_node = value
         else:
             raise TypeError("next_node must be a Node object")
+
 
 class SinglyLinkedList:
     """class List, create list
@@ -65,11 +66,11 @@ class SinglyLinkedList:
         """yield each node value for printing"""
         tmp = self.__head
         val = 0
-        if tmp == None:
-            return None
+        if tmp is None:
+            return ""
 
         new = ''
-        while tmp != None:
+        while tmp is not None:
             val = tmp.data
             tmp = tmp.next_node
             new += "{:d}{}".format(val, '\n' if tmp else '')
@@ -83,13 +84,13 @@ class SinglyLinkedList:
         """
         new = Node(value)
         tmp = self.__head
-        if self.__head == None:
+        if self.__head is None:
             self.__head = new
         elif tmp.data > value:
             new.next_node = tmp
             self.__head = new
         else:
-            while tmp.next_node != None:
+            while tmp.next_node is not None:
                 if tmp.next_node.data > value:
                     new.next_node = tmp.next_node
                     tmp.next_node = new
