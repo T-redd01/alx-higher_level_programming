@@ -70,10 +70,13 @@ class Square:
         if self.__size == 0:
             print("")
             return
+        delim = ' '
+        if self.__position[1] > 0:
+            delim = '_'
 
         print("{}".format('\n' * self.__position[1]), end='')
         for i in range(self.__size):
-            print("{}".format(' ' * self.__position[0]), end='')
+            print("{}".format(delim * self.__position[0]), end='')
             for j in range(self.__size):
                 print("#", end='')
             print("")
