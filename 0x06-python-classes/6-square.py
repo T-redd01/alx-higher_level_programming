@@ -54,6 +54,8 @@ class Square:
             or not isinstance(value[0], int)
                 or not isinstance(value[1], int)):
             raise TypeError("position must be a tuple of 2 positive integers")
+        if value[0] < 0 or value[1] < 0:
+            raise TypeError("position must be a tuple of 2 positive integers")
 
         self.__position = value
 
@@ -71,8 +73,6 @@ class Square:
             print("")
             return
         delim = ' '
-        if self.__position[1] > 0:
-            delim = '_'
 
         print("{}".format('\n' * self.__position[1]), end='')
         for i in range(self.__size):
