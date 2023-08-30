@@ -45,13 +45,10 @@ class Node:
 
     @next_node.setter
     def next_node(self, value):
-        """if value == None:
+        if isinstance(value, Node) or value == None:
             self.__next_node = value
-        if type(value) != type(Node:
+        else:
             raise TypeError("next_node must be a Node object")
-        """
-        self.__next_node = value
-
 
 class SinglyLinkedList:
     """class List, create list
@@ -63,6 +60,20 @@ class SinglyLinkedList:
     def __init__(self):
         """Initialize list"""
         self.__head = None
+
+    def __str__(self):
+        """yield each node value for printing"""
+        tmp = self.__head
+        val = 0
+        if tmp == None:
+            return None
+
+        new = ''
+        while tmp != None:
+            val = tmp.data
+            tmp = tmp.next_node
+            new += "{:d}{}".format(val, '\n' if tmp else '')
+        return new
 
     def sorted_insert(self, value):
         """insert into list in order
