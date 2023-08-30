@@ -17,7 +17,7 @@ class MagicClass:
             radius (int): radius of instance
         """
         self._MagicClass__radius = 0
-        if type(radius) is not int or type(radius) is not float:
+        if type(radius) is not int and type(radius) is not float:
             raise TypeError("radius must be a number")
         else:
             self._MagicClass__radius = radius
@@ -36,4 +36,4 @@ class MagicClass:
         Returns:
             circumference of circle
         """
-        return 2 * math.pi * self._MagicClass__radius
+        return (2 * math.pi) * self._MagicClass__radius
