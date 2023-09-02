@@ -1,0 +1,61 @@
+============================
+Doctest for text indentation
+============================
+
+testing cases for ``text_indentation`` function
+
+type check
+==========
+
+argument must be a string
+
+::
+
+	>>> text_indentation = __import__("5-text_indentation").text_indentation
+	>>> text_indentation(56)
+	Traceback (innermost last):
+	TypeError: text must be a string
+	>>> text_indentation(b"byte string")
+	Traceback (innermost last):
+	TypeError: text must be a string
+
+must print string without space in beginning or end
+and add 2 new lines ("\n") after symbols - . ? :
+
+Correct output
+==============
+
+::
+
+	>>> text_indentation = __import__("5-text_indentation").text_indentation
+	>>> text_indentation("This is a string")
+	This is a string
+	>>> text_indentation("   This is also a string")
+	This is also a string
+	>>> text_indentation("This is another string   ")
+	This is another string
+	>>> text_indentation("          followed with another string    ")
+	followed with another string
+	>>> text_indentation("now with delims.")
+	now with delims.
+	<BLANKLINE>
+	>>> text_indentation("all the delims? here: in this sentence.")
+	all the delims?
+	<BLANKLINE>
+	here:
+	<BLANKLINE>
+	in this sentence.
+	<BLANKLINE>
+	>>> text_indentation("   some more:   delims  ?   here.  ")
+	some more:
+	<BLANKLINE>
+	delims  ?
+	<BLANKLINE>
+	here.
+	<BLANKLINE>
+	>>> text_indentation("non ending: in? delims")
+	non ending:
+	<BLANKLINE>
+	in?
+	<BLANKLINE>
+	delims

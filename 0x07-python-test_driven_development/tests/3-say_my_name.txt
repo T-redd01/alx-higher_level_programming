@@ -1,0 +1,35 @@
+=========================
+test case for say my name
+=========================
+
+test cases for ``say_my_name`` should print My name is <fname> <lname>
+
+Must be strings
+===============
+
+type of first name and last name must be strings
+
+::
+
+	>>> say_my_name = __import__("3-say_my_name").say_my_name
+	>>> say_my_name(856)
+	Traceback (innermost last):
+	TypeError: first_name must be a string
+	>>> say_my_name("str", 56)
+	Traceback (innermost last):
+	TypeError: last_name must be a string
+	>>> say_my_name(56, 78)
+	Traceback (innermost last):
+	TypeError: first_name must be a string
+
+Success cases
+=============
+
+must print my name is <fname> <lname>
+
+::
+	>>> say_my_name = __import__("3-say_my_name").say_my_name
+	>>> say_my_name("otto")
+	My name is otto 
+	>>> say_my_name("otto", "tentacles")
+	My name is otto tentacles

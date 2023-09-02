@@ -1,0 +1,47 @@
+================================================
+Testing add_integer from previous directory file
+================================================
+
+Creating doctests for ``add_integer`` here.
+
+Raises excptions
+================
+
+if a or b is not a float or int raise a Type error.
+
+::
+
+	>>> add_integer = __import__("0-add_integer").add_integer
+	>>> add_integer("str", 4)
+	Traceback (innermost last):
+	TypeError: a must be an integer
+	>>> add_integer(5, "hello")
+	Traceback (innermost last):
+	TypeError: b must be an integer
+
+cast float to int before addtion
+
+::
+
+	>>> add_integer = __import__("0-add_integer").add_integer
+	>>> a = 10.2
+	>>> add_integer(a, 5)
+	15
+	>>> b = 2.6
+	>>> add_integer(6, b)
+	8
+	>>> a, b = 10.2, 6.5
+	>>> add_integer(a, b)
+	16
+
+Does it actually add numbers
+
+::
+
+	>>> add_integer = __import__("0-add_integer").add_integer
+	>>> add_integer(59, 21)
+	80
+	>>> add_integer(2)
+	100
+	>>> add_integer(1, -1)
+	0
