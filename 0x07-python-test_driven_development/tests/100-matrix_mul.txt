@@ -1,0 +1,113 @@
+==========================
+multiplying matrices tests
+==========================
+
+here are the test cases for multiplying 2 matrices
+
+list check
+==========
+
+args must be a list
+
+::
+
+	>>> matrix_mul = __import__("100-matrix_mul").matrix_mul
+	>>> matrix_mul(56, [1, 2, 3])
+	Traceback (innermost last):
+	TypeError: m_a must be a list
+	>>> matrix_mul([1, 2, 3], "str")
+	Traceback (innermost last):
+	TypeError: m_b must be a list
+	>>> matrix_mul((1, 2, 3), {1:2, 3:4, 5:6})
+	Traceback (innermost last):
+	TypeError: m_a must be a list
+
+list of list check
+==================
+
+each matrix must contain lists
+
+::
+
+	>>> matrix_mul = __import__("100-matrix_mul").matrix_mul
+	>>> matrix_mul([56, [1, 2, 3], [1, 2, 3]], [[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+	Traceback (innermost last):
+	TypeError: m_a must be a list of lists
+	>>> matrix_mul([[1, 2], [3, 4]], ["str", [5, 6]])
+	Traceback (innermost last):
+	TypeError: m_b must be a list of lists
+	>>> matrix_mul(["string", (1, 2)], [{1:"str", 2:"rand"}, 35])
+	Traceback (innermost last):
+	TypeError: m_a must be a list of lists
+
+is empty
+========
+
+lists must not be empty
+
+::
+
+	>>> matrix_mul = __import__("100-matrix_mul").matrix_mul
+	>>> matrix_mul([], [[1, 2], [1, 2]])
+	Traceback (innermost last):
+	ValueError: m_a can't be empty
+	>>> matrix_mul([[5, 7], [2, 9]], [])
+	Traceback (innermost last):
+	ValueError: m_b can't be empty
+	>>> matrix_mul([[], []], [[23], [58]])
+	Traceback (innermost last):
+	ValueError: m_a can't be empty
+	>>> matrix_mul([[2, 6], [9, 3]], [[], []])
+	Traceback (innermost last):
+	ValueError: m_b can't be empty
+
+not numbers
+===========
+
+elements must be int or float
+
+::
+
+	>>> matrix_mul = __import__("100-matrix_mul").matrix_mul
+	>>> matrix_mul([["str", 22]], [[1, 5]])
+	Traceback (innermost last):
+	TypeError: m_a should contain only integers or floats
+	>>> matrix_mul([[1, 2]], [[(1, 2), 69]])
+	Traceback (innermost last):
+	TypeError: m_b should contain only integers or floats
+	>>> matrix_mul([[{1:2}, "str"], [{5, 6}, 45]], [["parameter", (25,)], [{2, 6, 8}, 88]])
+	Traceback (innermost last):
+	TypeError: m_a should contain only integers or floats
+
+uneven lists
+============
+
+each row of lists must be same size
+
+::
+
+	>>> matrix_mul = __import__("100-matrix_mul").matrix_mul
+	>>> matrix_mul([[1, 2],[1]], [[1, 2], [3, 4]])
+	Traceback (innermost last):
+	TypeError: each row of m_a must be of the same size
+	>>> matrix_mul([[1, 2], [7, 8]], [[1], [2, 5]])
+	Traceback (innermost last):
+	TypeError: each row of m_b must be of the same size
+	>>> matrix_mul([[2, 4, 5], [8, 7], [1]], [[5], [4, 7], [8, 3, 7]])
+	Traceback (innermost last):
+	TypeError: each row of m_a must be of the same size
+
+cant multiply
+=============
+
+rows and columns must be equal
+
+::
+
+	>>> matrix_mul = __import__("100-matrix_mul").matrix_mul
+	>>> matrix_mul([[1, 2, 3]], [[25], [56]])
+	Traceback (innermost last):
+	ValueError: m_a and m_b can't be multiplied
+	>>> matrix_mul([[1], [5], [8]], [[1, 5], [8, 2]])
+	Traceback (innermost last):
+	ValueError: m_a and m_b can't be multiplied
