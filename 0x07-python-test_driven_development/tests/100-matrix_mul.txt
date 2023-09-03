@@ -111,3 +111,16 @@ rows and columns must be equal
 	>>> matrix_mul([[1], [5], [8]], [[1, 5], [8, 2]])
 	Traceback (innermost last):
 	ValueError: m_a and m_b can't be multiplied
+
+correct results
+===============
+
+multiplies matrices correctly
+
+::
+
+	>>> matrix_mul = __import__("100-matrix_mul").matrix_mul
+	>>> print(matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4]]))
+	[[7, 10], [15, 22]]
+	>>> print(matrix_mul([[1, 2]], [[3, 4], [5, 6]]))
+	[[13, 16]]
