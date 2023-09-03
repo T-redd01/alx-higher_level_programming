@@ -1,4 +1,4 @@
-#include <python.h>
+#include <Python.h>
 
 /**
  * print_python_string - prints info about a python string object
@@ -12,12 +12,12 @@ void print_python_string(PyObject *p)
 	printf("[.] string object info\n");
 	if (!(PyUnicode_Check(p)))
 	{
-		printf("[ERROR] Invalid String Object\n");
+		printf("  [ERROR] Invalid String Object\n");
 		return;
 	}
 
 	printf("  type: ");
-	if (PyUnicode _IS_COMPACT_ASCII(p))
+	if (PyUnicode_IS_COMPACT_ASCII(p))
 		printf("compact ascii\n");
 	else if (PyUnicode_IS_COMPACT(p))
 		printf("compact unicode object\n");
@@ -25,10 +25,10 @@ void print_python_string(PyObject *p)
 		printf("UNKNOWN\n");
 
 	len = PyUnicode_GET_LENGTH(p);
-	printf("length: %zd\n", len);
+	printf("  length: %zd\n", len);
 
 	string = PyUnicode_AsUTF8AndSize(p, NULL);
-	printf("value: ");
+	printf("  value: ");
 	if (string)
 		printf("%s\n", string);
 }

@@ -1,12 +1,19 @@
 #!/usr/bin/python3
-text_indentation = __import__('5-text_indentation').text_indentation
+import ctypes
 
-text_indentation("""Lorem ipsum dolor sit amet, consectetur adipiscing elit. \
-Quonam modo? Utrum igitur tibi litteram videor an totas paginas commovere? \
-Non autem hoc: igitur ne illud quidem. Fortasse id optimum, sed ubi illud: \
-Plus semper voluptatis? Teneo, inquit, finem illi videri nihil dolere. \
-Transfer idem ad modestiam vel temperantiam, quae est moderatio cupiditatum \
-rationi oboediens. Si id dicis, vicimus. Inde sermone vario sex illa a Dipylo \
-stadia confecimus. Sin aliud quid voles, postea. Quae animi affectio suum \
-cuique tribuens atque hanc, quam dico. Utinam quidem dicerent alium alio \
-beatiorem! Iam ruinas videres""")
+lib = ctypes.CDLL('./libPython.so')
+lib.print_python_string.argtypes = [ctypes.py_object]
+s = "The spoon does not exist"
+lib.print_python_string(s)
+s = "ложка не существует"
+lib.print_python_string(s)
+s = "La cuillère n'existe pas"
+lib.print_python_string(s)
+s = "勺孨"
+lib.print_python_string(s)
+s = "숟가락은 존재하지 않는다."
+lib.print_python_string(s)
+s = "スプーンは存在しない"
+lib.print_python_string(s)
+s = b"The spoon does not exist"
+lib.print_python_string(s)
