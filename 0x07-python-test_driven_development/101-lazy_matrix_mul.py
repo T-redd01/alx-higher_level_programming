@@ -2,6 +2,7 @@
 """lazy matrix multiplication"""
 import numpy
 
+
 def lazy_matrix_mul(m_a, m_b):
     """multiply 2 matrices
 
@@ -31,7 +32,6 @@ def lazy_matrix_mul(m_a, m_b):
         for j in i:
             if type(j) not in [int, float]:
                 raise TypeError("m_a should contain only integers or floats")
-    
     if m_b == []:
         raise ValueError("m_b can't be empty")
     if isinstance(m_b[0], list):
@@ -51,7 +51,3 @@ def lazy_matrix_mul(m_a, m_b):
         raise ValueError("m_a and m_b can't be multiplied")
     res = numpy.matmul(m_a, m_b)
     return res
-
-
-print(lazy_matrix_mul([[1,2], [3,4]], [[1,2], [3,4]]))
-print(lazy_matrix_mul([[1,2]], [[3,4], [5,6]]))

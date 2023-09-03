@@ -1,5 +1,9 @@
 #include <python.h>
 
+/**
+ * print_python_string - prints info about a python string object
+ * @p: container that holds data about or for any python object
+ */
 void print_python_string(PyObject *p)
 {
 	Py_ssize_t len = 0;

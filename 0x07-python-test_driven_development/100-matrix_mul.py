@@ -29,7 +29,6 @@ def matrix_mul(m_a, m_b):
         for j in i:
             if type(j) not in [int, float]:
                 raise TypeError("m_a should contain only integers or floats")
-    
     if m_b == []:
         raise ValueError("m_b can't be empty")
     if isinstance(m_b[0], list):
