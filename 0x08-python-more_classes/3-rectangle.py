@@ -65,6 +65,7 @@ class Rectangle:
                 r_str += "#"
             if self.__height - 1 != i:
                 r_str += '\n'
+        print(r_str)
         return r_str
 
     def __repr__(self):
