@@ -7,8 +7,10 @@ class Rectangle:
 
     Attributes:
         number_of_instances (int): number of created objects
+        print_symbol (str): char / object to print rect
     """
     number_of_instances = 0
+    print_symbol = '#'
 
     def __init__(self, width=0, height=0):
         """initialize the rectanle instance
@@ -70,7 +72,8 @@ class Rectangle:
         r_str = ""
         for i in range(self.__height):
             for j in range(self.__width):
-                r_str += "#"
+                r_str += str(Rectangle.print_symbol)
+                print(str(Rectangle.print_symbol))
             if self.__height - 1 != i:
                 r_str += '\n'
         return r_str
