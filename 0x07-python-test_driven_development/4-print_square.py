@@ -15,3 +15,5 @@ def print_square(size):
 
     for i in range(size):
         print(f"{'#' * size}")
+    if size == 0:
+        print("")
