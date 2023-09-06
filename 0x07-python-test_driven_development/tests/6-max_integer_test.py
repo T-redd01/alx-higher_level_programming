@@ -32,3 +32,6 @@ class TestMaxInteger(unittest.TestCase):
         with self.assertRaises(TypeError):
             max_integer([1, 2, "str", 3])
             max_integer([23, (1, 2, 5), 89])
+
+if __name__ == "__main__":
+    unittest.main()
