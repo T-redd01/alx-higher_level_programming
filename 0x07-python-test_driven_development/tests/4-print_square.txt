@@ -49,4 +49,3 @@ Success case
 	>>> print_square(1)
 	#
 	>>> print_square(0)
-	<BLANKLINE>
