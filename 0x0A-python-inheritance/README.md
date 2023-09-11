@@ -1,0 +1,1 @@
+Proj about inheritance
