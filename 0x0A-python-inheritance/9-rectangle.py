@@ -6,7 +6,7 @@ class BaseGeometry:
     """an empty class"""
     def area(self):
         """raises an exception"""
-        return self.__width / self.__height
+        return self._Rectangle__width * self._Rectangle__height
 
     def integer_validator(self, name, value):
         """checks if value is int
@@ -24,6 +24,7 @@ class BaseGeometry:
         if value <= 0:
             raise ValueError("{} must be greater than 0".format(name))
         return True
+
 
 class Rectangle(BaseGeometry):
     """class about rectangle
@@ -47,4 +48,4 @@ class Rectangle(BaseGeometry):
 
     def __str__(self):
         """return string for rect"""
-        #to finish
+        return f"[Rectangle] {self.__width:d}/{self.__height:d}"
