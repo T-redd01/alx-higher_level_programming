@@ -8,5 +8,6 @@ def read_file(filename=""):
     Args:
         filename: a file
     """
-    with open(filename) as f:
-        pass
+    with open(filename, "r") as f:
+        r = f.read()
+        print(r)
