@@ -1,0 +1,26 @@
+================
+test for my_list
+================
+
+tests for lists
+
+prints sorted list
+==================
+
+the list is sorted
+
+::
+
+	>>> MyList = __import__('1-my_list').MyList
+	>>> ll = MyList()
+	>>> ll.append(1)
+	>>> ll.append(4)
+	>>> ll.append(2)
+	>>> ll.append(3)
+	>>> ll.append(5)
+	>>> print(ll)
+	[1, 4, 2, 3, 5]
+	>>> ll.print_sorted()
+	[1, 2, 3, 4, 5]
+	>>> print(ll)
+	[1, 4, 2, 3, 5]
