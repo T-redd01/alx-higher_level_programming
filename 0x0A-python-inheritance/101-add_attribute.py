@@ -10,4 +10,7 @@ def add_attribute(obj, name, value):
         name: name of new attr
         value: value of attr
     """
-    setattr(obj, name, value)
+    try:
+        setattr(obj, name, value)
+    except AttributeError:
+        raise TypeError("can't add new attribute")
