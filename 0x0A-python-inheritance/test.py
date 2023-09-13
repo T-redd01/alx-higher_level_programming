@@ -1,10 +1,7 @@
 #!/usr/bin/python3
-inherits_from = __import__('4-inherits_from').inherits_from
+MyInt = __import__('100-my_int').MyInt
 
-a = True
-if inherits_from(a, int):
-    print("{} inherited from class {}".format(a, int.__name__))
-if inherits_from(a, bool):
-    print("{} inherited from class {}".format(a, bool.__name__))
-if inherits_from(a, object):
-    print("{} inherited from class {}".format(a, object.__name__))
+my_i = MyInt(3)
+print(my_i)
+print(my_i == 3)
+print(my_i != 3)
