@@ -25,7 +25,7 @@ class Student:
 
     def to_json(self, attrs=None):
         """return dict repr of class for json"""
-        if attrs == None or not isinstance(attrs, list):
+        if attrs is None or not isinstance(attrs, list):
             return self.__dict__
 
         new = dict()
@@ -45,4 +45,6 @@ class Student:
         Args:
             json (dict): to change attrs
         """
-        self.__dict__ = json
+        keys = json.keys()
+        for i in keys:
+            self.__dict__[i] = json[i]
