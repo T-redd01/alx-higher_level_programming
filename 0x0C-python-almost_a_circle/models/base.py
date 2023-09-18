@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Base class or parent class to inherit from"""
 import json
+import csv
 
 
 class Base:
@@ -47,13 +48,12 @@ class Base:
             list_objs: list of instances
         """
         name = cls.__name__ + ".json"
-        print(name)
         holder = []
         for i in list_objs:
             holder.append(i.to_dictionary())
 
         with open(name, 'w') as f:
-            f.write(to_json_string(holder))
+            f.write(cls.to_json_string(holder))
 
     @staticmethod
     def from_json_string(json_string):
@@ -79,8 +79,8 @@ class Base:
         Returns:
             instance with attributes in dictionary
         """
-        bob = cls(0, 0)
-        bob.update(dictionary)
+        bob = cls(1, 1)
+        bob.update(**dictionary)
         return bob
 
     @classmethod
@@ -90,8 +90,54 @@ class Base:
         objs = []
         try:
             with open(name, 'r') as f:
-                for line in f:
-                    objs.append(create(from_json_string(line)))
+                my_l = cls.from_json_string(f.read())
+                for i in my_l:
+                    objs.append(cls.create(**i))
         except FileNotFoundError:
             return []
+        return objs
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """save in csv format
+
+        Args:
+            list_objs: list of objects
+        """
+        name = cls.__name__ + ".csv"
+        data = []
+        header = []
+        if cls.__name__ == "Rectangle":
+            header = ["id", "width", "height", "x", "y"]
+            for i in list_objs:
+                row = []
+                for j in header:
+                    row.append(getattr(i, j))
+                data.append(row)
+
+        if cls.__name__ == "Square":
+            header = ["id", "size", "x", "y"]
+            for i in list_objs:
+                row = []
+                for j in header:
+                    row.append(getattr(i, j))
+                data.append(row)
+        with open(name, 'w') as f:
+            csvwriter = csv.writer(f)
+            csvwriter.writerow(header)
+            csvwriter.writerows(data)
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """loads objs from file"""
+        name = cls.__name__ + ".csv"
+        objs = []
+        with open(name, 'r') as f:
+            csvreader = csv.reader(f)
+            header = next(csvreader)
+            for i in csvreader:
+                bob = cls.create()
+                for j in range(len(header)):
+                    setattr(bob, header[j], int(i[j]))
+                objs.append(bob)
         return objs

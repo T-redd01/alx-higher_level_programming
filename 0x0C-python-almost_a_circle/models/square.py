@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 """class for square which inherits from rectangle"""
-import rectangle
+from models.rectangle import Rectangle
 
 
-class Square(rectangle.Rectangle):
+class Square(Rectangle):
     """indirectly inherits from base and directly from rect"""
 
     def __init__(self, size, x=0, y=0, id=None):

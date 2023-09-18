@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 """class for rectangle a subclass of base"""
-import base
+from models.base import Base
 
 
-class Rectangle(base.Base):
+class Rectangle(Base):
     """class about a retangle that inherits from base"""
 
     def __init__(self, width, height, x=0, y=0, id=None):
