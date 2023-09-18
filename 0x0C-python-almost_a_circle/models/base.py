@@ -141,3 +141,33 @@ class Base:
                     setattr(bob, header[j], int(i[j]))
                 objs.append(bob)
         return objs
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """draws square with turtle graphics
+
+        Args:
+            list_rectangle: list of rectangles
+            list_squares: list of squares
+        """
+        window = turtle.Screen()
+        window.bgcolor("black")
+        p = turtle.Turtle()
+        p.pensize(5)
+        p.color("lightgreen")
+        for i in list_rectangles:
+            coords = (
+                    getattr(i, "width"),
+                    getattr(i, "height"),
+                    getattr(i, "width"),
+                    getattr(i, "height")
+                    )
+            for j in coords:
+                p.forward(j)
+                p.left(90)
+
+        for i in list_squares:
+            size = getattr(i, "size")
+            for i in range(4):
+                p.forward(size)
+                p.left(90)
