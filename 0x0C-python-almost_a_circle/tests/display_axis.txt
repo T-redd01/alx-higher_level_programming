@@ -1,0 +1,49 @@
+=====================================
+testing display with x and y position
+=====================================
+
+Rectangle.display()
+===================
+
+::
+
+	>>> from models.rectangle import Rectangle
+	>>> r1 = Rectangle(2, 3, 2, 2)
+	>>> r1.display()
+	<BLANKLINE>
+	<BLANKLINE>
+	  ##
+	  ##
+	  ##
+	>>> r2 = Rectangle(3, 2, 1, 0)
+	>>> r2.display()
+	 ###
+	 ###
+
+Square.display()
+================
+
+square inherits from rectangle
+
+::
+
+	>>> from models.square import Square
+	>>> s1 = Square(5)
+	>>> s1.display()
+	#####
+	#####
+	#####
+	#####
+	#####
+	>>> s2 = Square(2, 2)
+	>>> s2.display()
+	  ##
+	  ##
+	>>> s3 = Square(3, 1, 3)
+	>>> s3.display()
+	<BLANKLINE>
+	<BLANKLINE>
+	<BLANKLINE>
+	 ###
+	 ###
+	 ###
