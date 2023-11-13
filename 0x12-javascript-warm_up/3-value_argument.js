@@ -2,11 +2,11 @@
 
 const args = process.argv.slice(2);
 let len = 0;
-let i;
 
-for (i in args) {
-  len++;
-  break;
+for (len in args) {
+  if (len === 0) {
+    break;
+  }
 }
 
 if (len === 0) {
