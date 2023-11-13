@@ -5,8 +5,8 @@ let len = 0;
 let i;
 
 for (i in args) {
-	len++;
-	break;
+  len++;
+  break;
 }
 
 if (len === 0) {
