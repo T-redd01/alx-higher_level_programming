@@ -9,4 +9,5 @@ exports.nbOccurences = function (list, searchElement) {
       ocs++;
     }
   }
-}
+  return ocs;
+};

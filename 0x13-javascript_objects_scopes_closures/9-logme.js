@@ -1,5 +1,9 @@
 #!/usr/bin/node
 
+exports.logMe = function (item) {
+  console.log(incr() + ': ' + item);
+};
+
 const incr = (function () {
   let counter = 0;
   return function () {
@@ -7,9 +11,4 @@ const incr = (function () {
     counter += 1;
     return num;
   }
-}
-
-
-exports.logMe = function (item) {
-  console.log(incr() + ': ' + item);
-}
+}) ();
