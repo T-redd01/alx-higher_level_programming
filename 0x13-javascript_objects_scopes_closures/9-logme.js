@@ -7,8 +7,8 @@ exports.logMe = function (item) {
 const incr = (function () {
   let counter = 0;
   return function () {
-    let num = counter;
+    const num = counter;
     counter += 1;
     return num;
-  }
-}) ();
+  };
+})();
