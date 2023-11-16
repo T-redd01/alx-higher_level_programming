@@ -2,7 +2,7 @@
 
 const dict = require('./101-data.js').dict;
 let new_dict = {};
-const keys = dict.keys();
+const keys = Object.keys(dict);
 
 for (key in keys) {
   if (new_dict[dict[keys[key]]] === undefined) {
