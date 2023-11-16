@@ -1,17 +1,18 @@
 #!/usr/bin/node
 
 const dict = require('./101-data.js').dict;
-let new_dict = {};
+const newDict = {};
 const keys = Object.keys(dict);
+let key;
 
 for (key in keys) {
-  if (new_dict[dict[keys[key]]] === undefined) {
-    new_dict[dict[keys[key]]] = [];
-    new_dict[dict[keys[key]]].push(keys[key]);
+  if (newDict[dict[keys[key]]] === undefined) {
+    newDict[dict[keys[key]]] = [];
+    newDict[dict[keys[key]]].push(keys[key]);
   } else {
-    new_dict[dict[keys[key]]].push(keys[key]);
-    new_dict[dict[keys[key]]].sort();
+    newDict[dict[keys[key]]].push(keys[key]);
+    newDict[dict[keys[key]]].sort();
   }
 }
 
-console.log(new_dict);
+console.log(newDict);
