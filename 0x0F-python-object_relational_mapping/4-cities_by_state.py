@@ -1,4 +1,4 @@
-#!/home/otto/Documents/ORM-venv/venv/bin/python3
+#!/usr/bin/python3
 """using joiins with connectors"""
 import MySQLdb
 import sys

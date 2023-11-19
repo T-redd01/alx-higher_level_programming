@@ -1,4 +1,4 @@
-#!/home/otto/Documents/ORM-venv/venv/bin/python3
+#!/usr/bin/python3
 """searching for arg"""
 import MySQLdb
 import sys

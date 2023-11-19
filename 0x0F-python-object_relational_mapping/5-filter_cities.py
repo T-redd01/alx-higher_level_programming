@@ -1,4 +1,5 @@
-#!/home/otto/Documents/ORM-venv/venv/bin/python3
+#!/usr/bin/python3
+"""selecting cities from state"""
 import MySQLdb
 import sys
 
