@@ -1,5 +1,4 @@
-#!/home/otto/Documents/ORM-venv/venv/bin/python3
-"""#!/usr/bin/python3"""
+#!/usr/bin/python3
 """my first script with python db connector"""
 import MySQLdb
 import sys
