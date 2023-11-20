@@ -3,6 +3,7 @@
 from model_state import Base, State
 from sqlalchemy import create_engine
 from sqlalchemy.orm import Session
+from sqlalchemy import asc
 import sys
 
 
@@ -12,8 +13,8 @@ if __name__ == "__main__":
                            pool_pre_ping=True)
     Base.metadata.create_all(engine)
     session = Session(engine)
-    state = session.query(State).order_by(State.id).first()
-    if state:
-        print(f"{state.id}: {state.name}")
-    else:
-        print("")
+    states = session.query(State).where(State.name==sys.argv[4])
+    for state in states:
+        print(f"{state.id}")
+    if not states:
+        print("Not found")
