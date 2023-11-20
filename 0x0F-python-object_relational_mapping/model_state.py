@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """mapping class to table in sql"""
-from sqlalchemy.ext.declarative import declative_base
+from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column, Integer, String
 
 
@@ -13,6 +13,7 @@ class State(Base):
         Attributes:
             id: id of collumn
             name: state name in column
+            __table__: name of table
     """
 
     __tablename__ = "states"
