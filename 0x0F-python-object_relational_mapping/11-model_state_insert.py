@@ -1,9 +1,8 @@
 #!/usr/bin/python3
-"""query db with orm"""
+"""insert into db with orm"""
 from model_state import Base, State
 from sqlalchemy import create_engine
 from sqlalchemy.orm import Session
-from sqlalchemy import asc
 import sys
 
 
@@ -13,8 +12,8 @@ if __name__ == "__main__":
                            pool_pre_ping=True)
     Base.metadata.create_all(engine)
     session = Session(engine)
-    states = session.query(State).where(State.name == sys.argv[4]).all()
-    for state in states:
-        print(f"{state.id}")
-    if len(states) < 1:
-        print("Not found")
+    louisiana = State(name="Louisiana")
+    session.add(louisiana)
+    session.commit()
+    print(louisiana.id)
+    session.close()
