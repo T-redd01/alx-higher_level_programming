@@ -14,7 +14,7 @@ if __name__ == "__main__":
     r_dict = resp.json()
     if len(r_dict) == 0:
         print("No result")
-    elif "application/json" in resp.headers.get("content-type"):
-        print(f"[{r_dict.get('id')}] {r_dict.get('name')}")
-    else:
+    elif "application/json" not in resp.headers.get("content-type", ""):
         print("Not a valid JSON")
+    else:
+        print(f"[{r_dict.get('id')}] {r_dict.get('name')}")
